@@ -5,6 +5,7 @@ import { AppComponent } from "./app.component";
 import { HighlightDirective } from "./highlight.directive";
 import { NoOpenDirective } from "./no-open.directive";
 import { ConfirmDirective } from "./confirm.directive";
+import { UserProfileComponent } from "./userProfile.component";
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { ConfirmDirective } from "./confirm.directive";
     HighlightDirective,
     NoOpenDirective,
     ConfirmDirective,
+    UserProfileComponent,
   ],
   imports: [BrowserModule],
   providers: [],
