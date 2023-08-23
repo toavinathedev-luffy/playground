@@ -14,7 +14,7 @@ export class HighlightDirective {
   @Input("basic")
   basicColor = "#255487";
   @HostBinding("style.backgroundColor")
-  color = "transparent";
+  color = "";
   @HostListener("mouseenter")
   onMouseEnter() {
     this.color = this.backgroundColor;
@@ -23,7 +23,7 @@ export class HighlightDirective {
   OnMouseOut() {
     this.color = this.basicColor;
   }
-  ngOnInit() {
-    this.color = this.basicColor;
-  }
+  //   ngOnInit() {
+  //     this.color = this.basicColor;
+  //   }
 }
