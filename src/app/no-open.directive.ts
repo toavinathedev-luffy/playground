@@ -6,7 +6,6 @@ export class NoOpenDirective {
   message = "";
   @HostListener("click")
   noOpenClick() {
-    if (!confirm(this.message)) return false;
-    return true;
+    return false;
   }
 }
