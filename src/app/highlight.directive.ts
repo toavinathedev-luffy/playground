@@ -3,21 +3,27 @@ import {
   ElementRef,
   HostBinding,
   HostListener,
+  Input,
 } from "@angular/core";
 @Directive({
   selector: "p[highlight]",
 })
 export class HighlightDirective {
+  @Input("bg-color")
   backgroundColor = "yellow";
-  constructor(elementRef: ElementRef<HTMLElement>) {}
+  @Input("basic")
+  basicColor = "#255487";
   @HostBinding("style.backgroundColor")
   color = "transparent";
   @HostListener("mouseenter")
   onMouseEnter() {
-    this.color = "yellow";
+    this.color = this.backgroundColor;
   }
   @HostListener("mouseout")
   OnMouseOut() {
-    this.color = "transparent";
+    this.color = this.basicColor;
+  }
+  ngOnInit() {
+    this.color = this.basicColor;
   }
 }
