@@ -7,7 +7,8 @@ import { Component, Directive, ElementRef, Input } from "@angular/core";
     <h3>lastName= {{ last }}</h3>
     <img [src]="source == '' ? '...' : source" alt="image du logo" />
     <h2>job= {{ job }},({{ revenue | currency : "EUR" : "symbol" }})/mois</h2>
-    <p [class.hired]="isHired" ]></p>
+    <p [class.hired]="isHired">Engagé</p>
+    <button (click)="onClickButton($event.clientX)">Click</button>
   `,
   styles: [
     `
@@ -35,4 +36,8 @@ export class UserProfileComponent {
   isHired = false;
   constructor(private elementRef: ElementRef<HTMLElement>) {}
   ngOnInit() {}
+  onClickButton(position: number) {
+    console.log("clické");
+    console.log(position);
+  }
 }
